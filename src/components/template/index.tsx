@@ -270,6 +270,20 @@ export const Template = () => {
           buttonAddress="https://pay.kiwify.com.br/1QBqi6G"
           transparent
           ButtonFontColor="#000000"
+          callToAction={
+            <div style={{ textAlign: "center" }}>             
+              <p>Somomente hoje, apenas:</p>
+              <p
+                style={{
+                  color: "#00C762",
+                  fontWeight: "bold",
+                  fontSize: "65px",
+                }}
+              >
+                R$ 10,00
+              </p>
+            </div>
+          }
         />
       </div>
       <Spacer margin="40px 0" />
