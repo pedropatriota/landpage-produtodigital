@@ -271,9 +271,8 @@ export const Template = () => {
           transparent
           ButtonFontColor="#000000"
           callToAction={
-            <div style={{ textAlign: "center" }}>             
-              <p>Somomente hoje, apenas:</p>
-              <p
+            <div style={{ textAlign: "center" }}>        
+             <p
                 style={{
                   color: "#00C762",
                   fontWeight: "bold",
