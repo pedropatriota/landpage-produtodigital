@@ -47,7 +47,7 @@ export const Card = () => {
     <Container>
       <CardContainer>
         <FaStethoscope size="50" color="#20797C" />
-        <p>Saber exatamente o que postar para aumentar seu engajamento.</p>
+        <p>Criar conteúdo relevante e útil nas redes sociais que ressoe com seu público.</p>
       </CardContainer>
       <CardContainer>
         <FaStethoscope size="50" color="#20797C" />
