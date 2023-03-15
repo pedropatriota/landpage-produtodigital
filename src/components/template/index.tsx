@@ -42,9 +42,7 @@ export const Template = () => {
   const description = useMemo(() => {
     return (
       <p>
-        Para te ajudar a melhorar seus resultados, organizamos uma lista com os
-        principais erros de médicos no marketing. Confira e garanta a eficiência
-        na promoção de sua clínica.
+        Aprenda a usá-las como ferramenta de marketing para atrair novos pacientes e expandir sua carreira na área da saúde.
       </p>
     );
   }, []);
