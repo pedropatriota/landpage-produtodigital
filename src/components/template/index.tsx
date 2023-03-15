@@ -53,8 +53,7 @@ export const Template = () => {
     return (
       <>
         <p>
-          Médico, acesse agora o e-book “Trinta erros que você não deve cometer
-          em seu marketing” em poucos minutos.
+          Médico, acesse agora o e-book “ Aprenda a usar suas redes sociais para atrair novos pacientes” em poucos minutos.
         </p>
 
         <p>
@@ -72,7 +71,7 @@ export const Template = () => {
   const contentBonus = [
     {
       icon: "✅",
-      text: "30 Erros que você não deve cometer no Instagram Médico + 4 Bônus",
+      text: "Aprenda a usar suas redes sociais para atrair novos pacientes + 6 Bônus",
     },
     { icon: "✅", text: "BÔNUS#1: Construa a Bio para seu Instagram Médico" },
     { icon: "✅", text: "BÔNUS#2: Guia de como patrocinar conteúdos no Reels" },
@@ -89,7 +88,7 @@ export const Template = () => {
   const content = [
     {
       icon: "✅",
-      text: "30 Erros que você não deve cometer no Instagram Médico + 4 Bônus",
+      text: "Aprenda a usar suas redes sociais para atrair novos pacientes + 6 Bônus",
     },
     {
       icon: "✅",
@@ -104,7 +103,7 @@ export const Template = () => {
       <HeaderMessage
         hasLink={false}
         position="unset"
-        title="TRINTA ERROS QUE VOCÊ NÃO DEVE COMETER NO SEU INSTAGRAM MÉDICO"
+        title="APRENDA A USAR SUAS REDES SOCIAIS PARA ATRAIR NOVOS PACIENTES"
         description={descriptionHeader}
       />
       <Spacer margin="20px 0" />
