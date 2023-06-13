@@ -41,9 +41,9 @@ const Underline = styled.span`
 export const Template = () => {
   const description = useMemo(() => {
     return (      
-        <p>
-        Tenha em suas mãos um calendário prático para você adapatar com sua especialidade, com ele você vai conseguir:
-        </p>        
+        <strong>
+        <span style={{textDecoration: "underscore"}}>Tenha em suas mãos um calendário prático para você adapatar com sua especialidade,</span> com ele você vai conseguir:
+        </strong>        
     );
   }, []);
 
