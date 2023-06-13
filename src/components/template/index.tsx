@@ -41,13 +41,15 @@ const Underline = styled.span`
 export const Template = () => {
   const description = useMemo(() => {
     return (
-      <p>
-       NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR.
-      </p>
-       <p>
-          EU IREI LHE FORNECER, DE FORMA FÁCIL E CONVENIENTE, UM CALENDÁRIO COM 30 IDEIAS DE CONTEÚDOS PARA VOCÊ ADAPTAR PARA SUA ESPECIALIDADE, 
-          QUE IRÃO TORNAR SUAS REDES SOCIAIS EXTREMAMENTE ATRAENTES, MODERNAS E BEM ORGANIZADAS.
+      <>
+        <p>
+         NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR.
         </p>
+         <p>
+            EU IREI LHE FORNECER, DE FORMA FÁCIL E CONVENIENTE, UM CALENDÁRIO COM 30 IDEIAS DE CONTEÚDOS PARA VOCÊ ADAPTAR PARA SUA ESPECIALIDADE, 
+            QUE IRÃO TORNAR SUAS REDES SOCIAIS EXTREMAMENTE ATRAENTES, MODERNAS E BEM ORGANIZADAS.
+          </p>
+       </>
     );
   }, []);
 
@@ -62,6 +64,7 @@ export const Template = () => {
           De <Discount>R$50,00</Discount> por apenas{" "}
           <CurrentValue>R$10,00</CurrentValue>
         </p>
+        
         <p>
           Saiba o que você pode ganhar investindo{" "}
           <Underline>apenas 10 reais</Underline>, hoje:
