@@ -40,16 +40,10 @@ const Underline = styled.span`
 
 export const Template = () => {
   const description = useMemo(() => {
-    return (
-      <>
+    return (      
         <p>
-         NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR.
-        </p>
-         <p>
-            EU IREI LHE FORNECER, DE FORMA FÁCIL E CONVENIENTE, UM CALENDÁRIO COM 30 IDEIAS DE CONTEÚDOS PARA VOCÊ ADAPTAR PARA SUA ESPECIALIDADE, 
-            QUE IRÃO TORNAR SUAS REDES SOCIAIS EXTREMAMENTE ATRAENTES, MODERNAS E BEM ORGANIZADAS.
-          </p>
-       </>
+        Tenha em suas mãos um calendário prático para você adapatar com sua especialidade, com ele você vai conseguir:
+        </p>        
     );
   }, []);
 
@@ -108,7 +102,7 @@ export const Template = () => {
       <HeaderMessage
         hasLink={false}
         position="unset"
-        title="APRENDA A USAR SUAS REDES SOCIAIS PARA ATRAIR NOVOS PACIENTES"
+        title="NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR."
         description={descriptionHeader}
       />
       <Spacer margin="20px 0" />
