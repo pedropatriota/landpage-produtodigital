@@ -221,7 +221,7 @@ export const Template = () => {
           bold
           content={contentBonus}
           buttonTitle="QUERO APROVEITAR A SUPER OFERTA"
-          buttonAddress="https://pay.kiwify.com.br/IZVNU1n"
+          buttonAddress="https://pay.kiwify.com.br/fDN5SCy"
           bottomMessage={
             <div
               style={{
@@ -265,7 +265,7 @@ export const Template = () => {
           color={{ color: "#000" }}
           content={content}
           buttonTitle="QUERO ESTA OPÇÃO"
-          buttonAddress="https://pay.kiwify.com.br/1QBqi6G"
+          buttonAddress="https://pay.kiwify.com.br/lCzo77n"
           transparent
           ButtonFontColor="#000000"
           callToAction={
