@@ -79,7 +79,7 @@ export const Template = () => {
     { icon: "✅", text: "BÔNUS#5: 7 dias de Stories para gerar engajamento" },
     {
       icon: "✅",
-      text: "BÔNUS#6: Calendário para profissionais da saúde 2023",
+      text: "BÔNUS#6: Calendário para profissionais da saúde",
     },
     { icon: "✅", text: "1 ANO DE ACESSO" },
   ];
