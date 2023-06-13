@@ -70,9 +70,9 @@ export const Template = () => {
   const contentBonus = [
     {
       icon: "✅",
-      text: "Aprenda a usar suas redes sociais para atrair novos pacientes + 6 Bônus",
+      text: "Guia de rotina fácil de postagenss + 6 Bônus",
     },
-    { icon: "✅", text: "BÔNUS#1: Construa a Bio para seu Instagram Médico" },
+    { icon: "✅", text: "BÔNUS#1: Construa a Bio perfeita  para seu Instagram Médico"},
     { icon: "✅", text: "BÔNUS#2: Guia de como patrocinar conteúdos no Reels" },
     { icon: "✅", text: "BÔNUS#3: Humanize seus stories de forma fácil" },
     { icon: "✅", text: "BÔNUS#4: Postagens que fidelizam seguidores" },
@@ -87,7 +87,7 @@ export const Template = () => {
   const content = [
     {
       icon: "✅",
-      text: "Aprenda a usar suas redes sociais para atrair novos pacientes + 6 Bônus",
+      text: "Guia de rotina fácil de postagens",
     },
     {
       icon: "✅",
