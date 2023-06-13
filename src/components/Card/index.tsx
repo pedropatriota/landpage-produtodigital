@@ -55,7 +55,7 @@ export const Card = () => {
       </CardContainer>
       <CardContainer>
         <FaStethoscope size="50" color="#20797C" />
-        <p>Melhorar a fidelização dos seus pacientes.</p>
+        <p>Aumenter a fidelização de pacientes.</p>
       </CardContainer>
     </Container>
   );
