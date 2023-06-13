@@ -42,8 +42,12 @@ export const Template = () => {
   const description = useMemo(() => {
     return (
       <p>
-        Aprenda a usá-las como ferramenta de marketing para atrair novos pacientes e expandir sua carreira na área da saúde.
+       NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR.
       </p>
+       <p>
+          EU IREI LHE FORNECER, DE FORMA FÁCIL E CONVENIENTE, UM CALENDÁRIO COM 30 IDEIAS DE CONTEÚDOS PARA VOCÊ ADAPTAR PARA SUA ESPECIALIDADE, 
+          QUE IRÃO TORNAR SUAS REDES SOCIAIS EXTREMAMENTE ATRAENTES, MODERNAS E BEM ORGANIZADAS.
+        </p>
     );
   }, []);
 
@@ -51,8 +55,8 @@ export const Template = () => {
     return (
       <>
         <p>
-          Médico, acesse agora o e-book “ Aprenda a usar suas redes sociais para atrair novos pacientes” em poucos minutos.
-        </p>
+          Médico, acesse agora o e-book “Guia de rotina fácil de postagens” em poucos minutos.
+        </p>      
 
         <p>
           De <Discount>R$50,00</Discount> por apenas{" "}
