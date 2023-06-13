@@ -42,7 +42,7 @@ export const Template = () => {
   const description = useMemo(() => {
     return (      
         <strong>
-        <span style={{textDecoration: "underscore"}}>Tenha em suas mãos um calendário prático para você adapatar com sua especialidade,</span> com ele você vai conseguir:
+        <span style={{textDecoration: "underline"}}>Tenha em suas mãos um calendário prático para você adapatar com sua especialidade,</span> com ele você vai conseguir:
         </strong>        
     );
   }, []);
