@@ -19,6 +19,7 @@ import {
   Underline,
 } from "./style";
 import { Card2 } from "../Card2";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export const Template = () => {
   const description = useMemo(() => {
@@ -114,15 +115,18 @@ export const Template = () => {
     },
   ];
 
+  const { width } = useWindowSize();
+  const isMobile = width && width < 500 
+
   return (
     <Container>
       <WarnMessage />
-      <ImageContainerHeader>
+      <ImageContainerHeader isMobile={isMobile}>
         <HeaderMessage
           changeColor="#232e6f"
           hasImage
           hasLink={false}
-          position="unset"
+          position="absolute"
           title="NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR."
           description={descriptionHeader}
         />
@@ -157,7 +161,6 @@ export const Template = () => {
 
       <About bgColor="#f6f6f6" />
       <Spacer margin="20px 0" />
-      
       <HeaderMessage
         topMobile="-20px"
         hasLink={false}

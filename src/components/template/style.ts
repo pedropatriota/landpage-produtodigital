@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import header from '../../images/header.jpeg'
 
 export const Container = styled.div`
   position: relative;
@@ -27,21 +28,19 @@ export const Underline = styled.span`
   color: #3F51B5 !important;
   text-decoration: underline;
 `;
-export const ImageContainerHeader = styled.div`
+export const ImageContainerHeader = styled.div<{isMobile:boolean | 0 | undefined}>`
+position: relative;
   padding: 0;
   width: 100%;  
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-      358deg,
-      rgb(2 204 255 / 57%) 100%,
-      rgb(27 145 47 / 40%) 100%
-    ),
-    url(https://wallpapercave.com/wp/wp2386912.jpg), no-repeat;
+  background-image: url(${header});
     padding: 50px 0 50px;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    height: 500px;
+    background-position: ${({isMobile})=> isMobile ? 'right': 'center'};
+    background-repeat: no-repeat;
 `;
 
 

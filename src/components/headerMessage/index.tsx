@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../../hooks/useWindowSize";
-import header from "../../images/header.webp";
+import header from "../../images/header.jpeg";
 import { Link } from "../Button";
 
 type TLink = {
@@ -16,7 +16,7 @@ type TStylePosition = {
   isAbout?: boolean;
   bgColor?: Pick<React.CSSProperties, "background"> | string;
   hasImage?: boolean;
-  changeColor?:string;
+  changeColor?: string;
 };
 
 type TMessage = {
@@ -32,6 +32,10 @@ const ContainerMobile = styled.div<TMessage>`
   display: flex;
   flex-direction: column;
   padding: 0 10px;
+  position: ${({ position }) => (position ? position : "absolute")};
+  left: 5%;
+  top: ${({ hasImage }) => hasImage ? '50%' : '180px'};
+  transform: ${({ hasImage }) => hasImage && 'translateY(-50%)'};
   gap: 10px;
 
   h2 {
@@ -56,29 +60,24 @@ const ContainerMobile = styled.div<TMessage>`
 
 const ContainerDesktop = styled.div<TStylePosition>`
   display: flex;
-  color: ${({changeColor})=> changeColor ? changeColor : '#000'};
+  color: ${({ changeColor }) => (changeColor ? changeColor : "#000")};
   font-size: 30px;
   flex-direction: column;
   gap: 20px;
-  width: 40%;
+  width: 50%;
   position: ${({ position }) => (position ? position : "absolute")};
-  left: 10%;
-  top: 180px;
+  left: 5%;
+  top: ${({ hasImage }) => hasImage ? '50%' : '180px'};
+  transform: ${({ hasImage }) => hasImage && 'translateY(-50%)'};
   text-align: ${({ align }) => (align ? align : "center")};
   background-color: ${({ bgColor }) => bgColor};
-  background-image: ${({ hasImage }) =>
-      hasImage && `url(https://wallpapercave.com/wp/wp2386912.jpg)`}
+ 
     ${({ isAbout }) =>
       isAbout &&
       `
       z-index: 1;
     `}
-    h2 {
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 45px;
-  }
+    
   p {
     color: #000;
     margin-bottom: 18px;
@@ -99,6 +98,33 @@ const ContainerDesktop = styled.div<TStylePosition>`
   }
 `;
 
+const Content = styled.div<{isMobile: boolean | 0 | undefined}>`
+  h2 {
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: min(5vw, 35px);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-weight: ${({isMobile})=> isMobile && 500};
+  }
+ 
+`;
+
+const SmallContent = styled.div<{isMobile: boolean | 0 | undefined}>`
+    background: ${({isMobile})=> isMobile ? 'rgba(255,255,255,0.7)' : 'transparent' };
+    padding: 15px;
+    border-radius: 5px;
+
+   p {
+    color: #000;
+    margin-bottom: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    font-size:min(5vw, 18px);
+  }
+`
+
 export const HeaderMessage = ({
   title,
   description,
@@ -109,7 +135,7 @@ export const HeaderMessage = ({
   isAbout,
   bgColor,
   hasImage,
-  changeColor
+  changeColor,
 }: TMessage) => {
   const { width } = useWindowSize();
 
@@ -127,10 +153,13 @@ export const HeaderMessage = ({
     }
   }, [width, position]);
 
+  const isMobile = width && width < 600
+
   const content = useMemo(() => {
     return (
-      <>
+      <Content isMobile={isMobile}>
         <h2>{title}</h2>
+        <SmallContent isMobile={isMobile}>          
         <p>{description}</p>
         {hasLink && (
           <Link
@@ -139,12 +168,13 @@ export const HeaderMessage = ({
             address="https://docs.google.com/forms/d/e/1FAIpQLSd-lnYKXqSarbQAJk4wTK2kgH5YSufAw7wLZtbYxRbnKd2rXg/viewform?vc=0&c=0&w=1&flr=0"
           />
         )}
-      </>
+        </SmallContent>
+      </Content>
     );
   }, [title, description, linkStyle, hasLink]);
 
   if (width && width <= 768) {
-    return <ContainerMobile topMobile={topMobile}>{content}</ContainerMobile>;
+    return <ContainerMobile topMobile={topMobile} hasImage={hasImage} position={position}>{content}</ContainerMobile>;
   }
   return (
     <ContainerDesktop
