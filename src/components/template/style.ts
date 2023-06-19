@@ -19,12 +19,12 @@ export const Discount = styled.span`
 `;
 
 export const CurrentValue = styled.span`
-  color: green !important;
-  font-size: 18px !important;
+  color: #3F51B5 !important;
+  font-size: 25px !important;
 `;
 
 export const Underline = styled.span`
-  color: #565656 !important;
+  color: #3F51B5 !important;
   text-decoration: underline;
 `;
 export const ImageContainerHeader = styled.div`
