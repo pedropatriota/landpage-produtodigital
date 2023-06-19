@@ -7,43 +7,29 @@ import { List } from "../list";
 import { About } from "../About";
 import { CopyRights } from "../CopyRights";
 import { Pricing } from "../pricing";
+import { GraphUp, Megaphone } from "@styled-icons/bootstrap";
+import { Profile, Enlarge } from "@styled-icons/icomoon";
 
-import styled from "styled-components";
-
-const Container = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: "#fff";
-  background-image: none;
-  background-position: 53.6627% 7.2121%;
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-attachment: scroll;
-`;
-
-const Discount = styled.span`
-  color: red !important;
-  text-decoration: line-through;
-`;
-
-const CurrentValue = styled.span`
-  color: green !important;
-  font-size: 18px !important;
-`;
-
-const Underline = styled.span`
-  color: #565656 !important;
-  text-decoration: underline;
-`;
+import {
+  Container,
+  ContainerOfCards,
+  CurrentValue,
+  Discount,
+  ImageContainerHeader,
+  Underline,
+} from "./style";
+import { Card2 } from "../Card2";
 
 export const Template = () => {
   const description = useMemo(() => {
-    return (      
-        <strong>
-        <span style={{textDecoration: "underline"}}>Tenha em suas mãos um calendário prático para você adaptar com sua especialidade,</span> com ele você vai conseguir:
-        </strong>        
+    return (
+      <strong>
+        <span style={{ textDecoration: "underline" }}>
+          Tenha em suas mãos um calendário prático para você adaptar com sua
+          especialidade,
+        </span>{" "}
+        com ele você vai conseguir:
+      </strong>
     );
   }, []);
 
@@ -51,14 +37,13 @@ export const Template = () => {
     return (
       <>
         <p>
-          Médico, acesse agora o e-book “Guia de rotina fácil de postagens” em poucos minutos.
-        </p>      
-
+          Médico, acesse agora o e-book “Guia de rotina fácil de postagens” em
+          poucos minutos.
+        </p>
         <p>
           De <Discount>R$50,00</Discount> por apenas{" "}
           <CurrentValue>R$10,00</CurrentValue>
         </p>
-        
         <p>
           Saiba o que você pode ganhar investindo{" "}
           <Underline>apenas 10 reais</Underline>, hoje:
@@ -72,7 +57,10 @@ export const Template = () => {
       icon: "✅",
       text: "Guia de rotina fácil de postagenss + 6 Bônus",
     },
-    { icon: "✅", text: "BÔNUS#1: Construa a Bio perfeita  para seu Instagram Médico"},
+    {
+      icon: "✅",
+      text: "BÔNUS#1: Construa a Bio perfeita  para seu Instagram Médico",
+    },
     { icon: "✅", text: "BÔNUS#2: Guia de como patrocinar conteúdos no Reels" },
     { icon: "✅", text: "BÔNUS#3: Humanize seus stories de forma fácil" },
     { icon: "✅", text: "BÔNUS#4: Postagens que fidelizam seguidores" },
@@ -95,17 +83,50 @@ export const Template = () => {
     },
   ];
 
+  const cards2Array = [
+    {
+      background: "#3AA8EA",
+      icon: <GraphUp />,
+      title: "Eficiência",
+      description:
+        "Você vai economizar tempo, mantendo uma presença online consistente",
+    },
+    {
+      background: "#088ED9",
+      icon: <Megaphone />,
+      title: "Consistência na comunicação",
+      description:
+        "Seguir um cronograma de postagens estabelecido mantém você em contato regular com seu público, fortalecendo relacionamentos.",
+    },
+    {
+      background: "#1D77CA",
+      icon: <Profile />,
+      title: "Credibilidade profissional",
+      description:
+        "Esse produto vai ajudar a fortalecer a confiança dos pacientes, destacando sua experiência e conhecimento por meio de conteúdos relevantes.",
+    },
+    {
+      background: "#1362AD",
+      icon: <Enlarge />,
+      title: "Alcance ampliado",
+      description:
+        "Com um calendário estratégico de postagens, você aumenta sua visibilidade e atrai novos pacientes por meio de plataformas digitais populares.",
+    },
+  ];
+
   return (
     <Container>
       <WarnMessage />
-      {/* <HeaderImage urlDesktop={headerImage} urlMobile={headerImageMobile} /> */}
-      <HeaderMessage
-        hasLink={false}
-        position="unset"
-        title="NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR."
-        description={descriptionHeader}
-      />
-      <Spacer margin="20px 0" />
+      <ImageContainerHeader>
+        <HeaderMessage
+          changeColor="#232e6f"
+          hasImage
+          hasLink={false}
+          position="unset"
+          title="NÃO PERCA MAIS TEMPO PENSANDO EM QUE TIPO DE CONTEÚDO PUBLICAR."
+          description={descriptionHeader}
+        />
+      </ImageContainerHeader>
       <div
         style={{
           width: "100%",
@@ -121,6 +142,22 @@ export const Template = () => {
         />
       </div>
       <Spacer margin="20px 0" />
+
+      <ContainerOfCards>
+        {cards2Array.map(({ title, icon, description, background }, idx) => (
+          <Card2
+            key={idx}
+            title={title}
+            icon={icon}
+            description={description}
+            background={background}
+          />
+        ))}
+      </ContainerOfCards>
+
+      <About bgColor="#f6f6f6" />
+      <Spacer margin="20px 0" />
+      
       <HeaderMessage
         topMobile="-20px"
         hasLink={false}
@@ -269,8 +306,8 @@ export const Template = () => {
           transparent
           ButtonFontColor="#000000"
           callToAction={
-            <div style={{ textAlign: "center" }}>        
-             <p
+            <div style={{ textAlign: "center" }}>
+              <p
                 style={{
                   color: "#00C762",
                   fontWeight: "bold",
@@ -282,12 +319,10 @@ export const Template = () => {
             </div>
           }
         />
-      </div>
+      </div>      
       <Spacer margin="40px 0" />
-      <About bgColor="#f6f6f6" />
-      <Spacer margin="20px 0" />
-      <CopyRights />
-      <Spacer margin="20px 0" />
+      <CopyRights /> 
+      <Spacer margin="10px 0" />    
     </Container>
   );
 };

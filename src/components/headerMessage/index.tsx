@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import useWindowSize from "../../hooks/useWindowSize";
+import header from "../../images/header.webp";
 import { Link } from "../Button";
 
 type TLink = {
@@ -14,6 +15,8 @@ type TStylePosition = {
   align?: "center" | "left" | "right" | "justify";
   isAbout?: boolean;
   bgColor?: Pick<React.CSSProperties, "background"> | string;
+  hasImage?: boolean;
+  changeColor?:string;
 };
 
 type TMessage = {
@@ -26,6 +29,10 @@ type TMessage = {
 const ContainerMobile = styled.div<TMessage>`
   width: 359.551px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 10px;
 
   h2 {
     color: #000;
@@ -48,23 +55,28 @@ const ContainerMobile = styled.div<TMessage>`
 `;
 
 const ContainerDesktop = styled.div<TStylePosition>`
+  display: flex;
+  color: ${({changeColor})=> changeColor ? changeColor : '#000'};
+  font-size: 30px;
+  flex-direction: column;
+  gap: 20px;
   width: 40%;
   position: ${({ position }) => (position ? position : "absolute")};
   left: 10%;
   top: 180px;
   text-align: ${({ align }) => (align ? align : "center")};
-  background: ${({ bgColor }) => bgColor};
-
-  ${({ isAbout }) =>
-    isAbout &&
-    `
+  background-color: ${({ bgColor }) => bgColor};
+  background-image: ${({ hasImage }) =>
+      hasImage && `url(https://wallpapercave.com/wp/wp2386912.jpg)`}
+    ${({ isAbout }) =>
+      isAbout &&
+      `
       z-index: 1;
     `}
-
-  h2 {
+    h2 {
     color: #000;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-size: 45px;
   }
   p {
@@ -96,6 +108,8 @@ export const HeaderMessage = ({
   topMobile,
   isAbout,
   bgColor,
+  hasImage,
+  changeColor
 }: TMessage) => {
   const { width } = useWindowSize();
 
@@ -134,10 +148,12 @@ export const HeaderMessage = ({
   }
   return (
     <ContainerDesktop
+      hasImage={hasImage}
       position={position}
       align={align}
       isAbout={isAbout}
       bgColor={bgColor}
+      changeColor={changeColor}
     >
       {content}
     </ContainerDesktop>

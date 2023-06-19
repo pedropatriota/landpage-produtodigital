@@ -5,7 +5,7 @@ import { FaStethoscope } from "react-icons/fa";
 
 const Container = styled.div`
   margin-top: 20px;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 1;
@@ -22,7 +22,7 @@ const CardContainer = styled.div`
   max-width: 200px;
   min-height: 250px;
   overflow: hidden;
-  transition: 0.2s linear;
+  transition: 0.2s ease;
 
   &:hover {
     scale: 1.1;

@@ -20,7 +20,7 @@ const ImgContainer = styled.div<TImage>`
   background-repeat: no-repeat;
   background-attachment: scroll;
   border-radius: 10px;
-  margin: 20px 0 0 50px;
+  margin: 20px 0 0 20px;
 
   @media (min-width: 768px) {
     mask-image: linear-gradient(to bottom, #7d7979 90%, #00000003 100%);

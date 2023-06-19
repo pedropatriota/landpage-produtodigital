@@ -14,9 +14,12 @@ const AboutDesktop = styled.div<TAbout>`
   padding-bottom: 50px;
   display: flex;
   width: 100%;
+  gap:15px;
   justify-content: center;
   background: ${({ bgColor }) => bgColor};
 `;
+
+
 
 export const About = ({ bgColor }: TAbout) => {
   const { width } = useWindowSize();
@@ -51,15 +54,15 @@ export const About = ({ bgColor }: TAbout) => {
   return (
     <>
       {width && width <= 768 ? (
-        <>
+        <AboutDesktop bgColor={bgColor}>
           <HeaderImage
             isAboutMobile
-            width="0"
-            height="0"
-            widthMobile="0"
-            heightMobile="0"
-            urlDesktop={aboutImage}
-            urlMobile=""
+            width="200px"
+            height="auto"
+            widthMobile="200px"
+            heightMobile="auto"
+            urlDesktop=''
+            urlMobile={aboutImage}
           />
           <HeaderMessage
             topMobile="20px"
@@ -68,7 +71,7 @@ export const About = ({ bgColor }: TAbout) => {
             title="Sobre Camilla Gomes"
             description={description2}
           />
-        </>
+        </AboutDesktop>
       ) : (
         <AboutDesktop bgColor={bgColor}>
           <HeaderMessage
@@ -86,7 +89,7 @@ export const About = ({ bgColor }: TAbout) => {
             widthMobile=""
             heightMobile=""
             urlDesktop={aboutImage}
-            urlMobile=""
+            urlMobile= ''
           />
         </AboutDesktop>
       )}
