@@ -42,12 +42,12 @@ export const Template = () => {
           poucos minutos.
         </p>
         <p>
-          De <Discount>R$50,00</Discount> por apenas{" "}
-          <CurrentValue>R$10,00</CurrentValue>
+          De <Discount>150,00 EUR</Discount> por apenas{" "}
+          <CurrentValue>10,00 EUR</CurrentValue>
         </p>
         <p>
           Saiba o que você pode ganhar investindo{" "}
-          <Underline>apenas 10 reais</Underline>, hoje:
+          <Underline>apenas 10 Euros</Underline>, hoje:
         </p>
       </>
     );
@@ -68,8 +68,9 @@ export const Template = () => {
     { icon: "✅", text: "BÔNUS#5: 7 dias de Stories para gerar engajamento" },
     {
       icon: "✅",
-      text: "BÔNUS#6: Calendário para profissionais da saúde",
+      text: "BÔNUS#6: Headlines que conquistam pacientes",
     },
+    { icon: "✅", text: "Garantia de 7 dias" },
     { icon: "✅", text: "1 ANO DE ACESSO" },
   ];
 
@@ -78,6 +79,7 @@ export const Template = () => {
       icon: "✅",
       text: "Guia de rotina fácil de postagens",
     },
+    { icon: "✅", text: "Garantia de 7 dias" },
     {
       icon: "✅",
       text: "1 ANO DE ACESSO",
