@@ -27,15 +27,14 @@ type TMessage = {
 } & TStylePosition;
 
 const ContainerMobile = styled.div<TMessage>`
-  width: 359.551px;
   text-align: center;
   display: flex;
   flex-direction: column;
   padding: 0 10px;
   position: ${({ position }) => (position ? position : "absolute")};
   left: 5%;
-  top: ${({ hasImage }) => hasImage ? '50%' : '180px'};
-  transform: ${({ hasImage }) => hasImage && 'translateY(-50%)'};
+  top: ${({ hasImage }) => (hasImage ? "50%" : "180px")};
+  transform: ${({ hasImage }) => hasImage && "translateY(-50%)"};
   gap: 10px;
 
   h2 {
@@ -67,17 +66,17 @@ const ContainerDesktop = styled.div<TStylePosition>`
   width: 50%;
   position: ${({ position }) => (position ? position : "absolute")};
   left: 5%;
-  top: ${({ hasImage }) => hasImage ? '50%' : '180px'};
-  transform: ${({ hasImage }) => hasImage && 'translateY(-50%)'};
+  top: ${({ hasImage }) => (hasImage ? "50%" : "180px")};
+  transform: ${({ hasImage }) => hasImage && "translateY(-50%)"};
   text-align: ${({ align }) => (align ? align : "center")};
   background-color: ${({ bgColor }) => bgColor};
- 
-    ${({ isAbout }) =>
-      isAbout &&
-      `
+
+  ${({ isAbout }) =>
+    isAbout &&
+    `
       z-index: 1;
     `}
-    
+
   p {
     color: #000;
     margin-bottom: 18px;
@@ -98,7 +97,7 @@ const ContainerDesktop = styled.div<TStylePosition>`
   }
 `;
 
-const Content = styled.div<{isMobile: boolean | 0 | undefined}>`
+const Content = styled.div<{ isMobile: boolean | 0 | undefined }>`
   h2 {
     color: #000;
     margin-top: 10px;
@@ -106,24 +105,23 @@ const Content = styled.div<{isMobile: boolean | 0 | undefined}>`
     font-size: min(5vw, 35px);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
-    font-weight: ${({isMobile})=> isMobile && 500};
+    font-weight: ${({ isMobile }) => isMobile && 500};
   }
- 
 `;
 
-const SmallContent = styled.div<{isMobile: boolean | 0 | undefined}>`
-    background: ${({isMobile})=> isMobile ? 'rgba(255,255,255,0.7)' : 'transparent' };
-    padding: 15px;
-    border-radius: 5px;
+const SmallContent = styled.div<{ isMobile: boolean | 0 | undefined }>`
+  /* background: ${({ isMobile }) =>
+    isMobile ? "rgba(255,255,255,0.7)" : "transparent"}; */
+  border-radius: 5px;
 
-   p {
+  p {
     color: #000;
     margin-bottom: 18px;
     line-height: 25px;
     font-weight: 500;
-    font-size:min(5vw, 18px);
+    font-size: min(5vw, 18px);
   }
-`
+`;
 
 export const HeaderMessage = ({
   title,
@@ -153,28 +151,36 @@ export const HeaderMessage = ({
     }
   }, [width, position]);
 
-  const isMobile = width && width < 600
+  const isMobile = width && width < 600;
 
   const content = useMemo(() => {
     return (
       <Content isMobile={isMobile}>
         <h2>{title}</h2>
-        <SmallContent isMobile={isMobile}>          
-        <p>{description}</p>
-        {hasLink && (
-          <Link
-            title="QUERO AGENDAR MINHA SESSÃO GRATUITA"
-            {...linkStyle}
-            address="https://docs.google.com/forms/d/e/1FAIpQLSd-lnYKXqSarbQAJk4wTK2kgH5YSufAw7wLZtbYxRbnKd2rXg/viewform?vc=0&c=0&w=1&flr=0"
-          />
-        )}
+        <SmallContent isMobile={isMobile}>
+          <p>{description}</p>
+          {hasLink && (
+            <Link
+              title="QUERO AGENDAR MINHA SESSÃO GRATUITA"
+              {...linkStyle}
+              address="https://docs.google.com/forms/d/e/1FAIpQLSd-lnYKXqSarbQAJk4wTK2kgH5YSufAw7wLZtbYxRbnKd2rXg/viewform?vc=0&c=0&w=1&flr=0"
+            />
+          )}
         </SmallContent>
       </Content>
     );
   }, [title, description, linkStyle, hasLink]);
 
   if (width && width <= 768) {
-    return <ContainerMobile topMobile={topMobile} hasImage={hasImage} position={position}>{content}</ContainerMobile>;
+    return (
+      <ContainerMobile
+        topMobile={topMobile}
+        hasImage={hasImage}
+        position={position}
+      >
+        {content}
+      </ContainerMobile>
+    );
   }
   return (
     <ContainerDesktop

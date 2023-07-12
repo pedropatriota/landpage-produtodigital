@@ -116,7 +116,7 @@ export const Template = () => {
   ];
 
   const { width } = useWindowSize();
-  const isMobile = width && width < 500 
+  const isMobile = width && width < 500;
 
   return (
     <Container>
@@ -159,8 +159,6 @@ export const Template = () => {
         ))}
       </ContainerOfCards>
 
-      <About bgColor="#f6f6f6" />
-      <Spacer margin="20px 0" />
       <HeaderMessage
         topMobile="-20px"
         hasLink={false}
@@ -284,7 +282,7 @@ export const Template = () => {
               <p style={{ color: "red", fontWeight: "bold", fontSize: "20px" }}>
                 VALOR TOTAL ={" "}
                 <span style={{ textDecoration: "line-through" }}>
-                  R$ 197,00
+                  150,00 EUR
                 </span>
               </p>
               <p>Somomente hoje, apenas:</p>
@@ -295,7 +293,7 @@ export const Template = () => {
                   fontSize: "65px",
                 }}
               >
-                R$ 37,00
+                37,00 EUR
               </p>
             </div>
           }
@@ -317,15 +315,17 @@ export const Template = () => {
                   fontSize: "65px",
                 }}
               >
-                R$ 10,00
+                10,00 EUR
               </p>
             </div>
           }
         />
-      </div>      
-      <Spacer margin="40px 0" />
-      <CopyRights /> 
-      <Spacer margin="10px 0" />    
+      </div>
+      <Spacer margin="20px 0" />
+      <About bgColor="#f6f6f6" />
+      <Spacer margin="20px 0" />
+      <CopyRights />
+      <Spacer margin="10px 0" />
     </Container>
   );
 };

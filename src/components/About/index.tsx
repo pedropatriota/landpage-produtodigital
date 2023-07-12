@@ -13,13 +13,17 @@ type TAbout = {
 const AboutDesktop = styled.div<TAbout>`
   padding-bottom: 50px;
   display: flex;
+  flex-direction: row;
   width: 100%;
-  gap:15px;
+  gap: 15px;
   justify-content: center;
   background: ${({ bgColor }) => bgColor};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-
-
 
 export const About = ({ bgColor }: TAbout) => {
   const { width } = useWindowSize();
@@ -58,10 +62,10 @@ export const About = ({ bgColor }: TAbout) => {
           <HeaderImage
             isAboutMobile
             width="200px"
-            height="auto"
+            height="200px"
             widthMobile="200px"
-            heightMobile="auto"
-            urlDesktop=''
+            heightMobile="200px"
+            urlDesktop=""
             urlMobile={aboutImage}
           />
           <HeaderMessage
@@ -89,7 +93,7 @@ export const About = ({ bgColor }: TAbout) => {
             widthMobile=""
             heightMobile=""
             urlDesktop={aboutImage}
-            urlMobile= ''
+            urlMobile=""
           />
         </AboutDesktop>
       )}

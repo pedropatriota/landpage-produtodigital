@@ -7,6 +7,7 @@ const Container = styled.div`
   margin-top: 20px;
   width: 90%;
   display: flex;
+  gap: 5px;
   flex-wrap: wrap;
   flex-shrink: 1;
   gap: 20px;
@@ -47,7 +48,10 @@ export const Card = () => {
     <Container>
       <CardContainer>
         <FaStethoscope size="50" color="#20797C" />
-        <p>Criar conteúdo relevante e útil nas redes sociais que ressoe com seu público.</p>
+        <p>
+          Criar conteúdo relevante e útil nas redes sociais que ressoe com seu
+          público.
+        </p>
       </CardContainer>
       <CardContainer>
         <FaStethoscope size="50" color="#20797C" />

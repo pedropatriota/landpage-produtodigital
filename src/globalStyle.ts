@@ -50,5 +50,9 @@ h6 {
   isolation: isolate;
   height: 100%;
 }
+
+iframe {
+  pointer-events: none;
+}
 `;
 /* END - CSS Reset */
