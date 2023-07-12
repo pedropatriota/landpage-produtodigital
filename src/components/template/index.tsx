@@ -259,7 +259,7 @@ export const Template = () => {
           bold
           content={contentBonus}
           buttonTitle="QUERO APROVEITAR A SUPER OFERTA"
-          buttonAddress="https://pay.kiwify.com.br/fDN5SCy"
+          buttonAddress="https://pay.hotmart.com/H84692866M"
           bottomMessage={
             <div
               style={{
@@ -290,10 +290,10 @@ export const Template = () => {
                 style={{
                   color: "#00C762",
                   fontWeight: "bold",
-                  fontSize: "65px",
+                  fontSize: "58px",
                 }}
               >
-                37,00 EUR
+                37,00 EUR <span style={{ fontSize: "12px" }}>+IVA</span>
               </p>
             </div>
           }
@@ -303,7 +303,7 @@ export const Template = () => {
           color={{ color: "#000" }}
           content={content}
           buttonTitle="QUERO ESTA OPÇÃO"
-          buttonAddress="https://pay.kiwify.com.br/lCzo77n"
+          buttonAddress="https://pay.hotmart.com/T84506428R"
           transparent
           ButtonFontColor="#000000"
           callToAction={
@@ -312,10 +312,10 @@ export const Template = () => {
                 style={{
                   color: "#00C762",
                   fontWeight: "bold",
-                  fontSize: "65px",
+                  fontSize: "58px",
                 }}
               >
-                10,00 EUR
+                10,00 EUR <span style={{ fontSize: "12px" }}>+IVA</span>
               </p>
             </div>
           }
