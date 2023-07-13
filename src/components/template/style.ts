@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import header from '../../images/header.jpeg'
+import header from "../../images/header.jpeg";
 
 export const Container = styled.div`
   position: relative;
@@ -20,29 +20,30 @@ export const Discount = styled.span`
 `;
 
 export const CurrentValue = styled.span`
-  color: #3F51B5 !important;
-  font-size: 25px !important;
+  color: #3f51b5 !important;
+  font-size: 20px !important;
 `;
 
 export const Underline = styled.span`
-  color: #3F51B5 !important;
+  color: #3f51b5 !important;
   text-decoration: underline;
 `;
-export const ImageContainerHeader = styled.div<{isMobile:boolean | 0 | undefined}>`
-position: relative;
+export const ImageContainerHeader = styled.div<{
+  isMobile: boolean | 0 | undefined;
+}>`
+  position: relative;
   padding: 0;
-  width: 100%;  
+  width: 100%;
   display: flex;
   justify-content: center;
   background-image: url(${header});
-    padding: 50px 0 50px;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    background-position: ${({isMobile})=> isMobile ? 'right': 'center'};
-    background-repeat: no-repeat;
+  padding: 50px 0 50px;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  background-position: ${({ isMobile }) => (isMobile ? "right" : "center")};
+  background-repeat: no-repeat;
 `;
-
 
 export const ContainerOfCards = styled.div`
   width: 90%;
@@ -51,6 +52,4 @@ export const ContainerOfCards = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
-  
-
-`
+`;
