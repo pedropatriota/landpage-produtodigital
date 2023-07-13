@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import header from "../../images/header.jpeg";
 
+type TMobile = { isMobile?: boolean | 0 };
+
 export const Container = styled.div`
   position: relative;
   display: flex;
@@ -28,9 +30,7 @@ export const Underline = styled.span`
   color: #3f51b5 !important;
   text-decoration: underline;
 `;
-export const ImageContainerHeader = styled.div<{
-  isMobile: boolean | number | undefined;
-}>`
+export const ImageContainerHeader = styled.div<TMobile>`
   position: relative;
   padding: 0;
   width: 100%;
