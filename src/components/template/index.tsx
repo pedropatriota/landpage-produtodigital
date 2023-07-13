@@ -295,7 +295,7 @@ export const Template = () => {
                   fontSize: "58px",
                 }}
               >
-                24,60 EUR</span>
+                24,60 EUR
               </p>
             </div>
           }
@@ -317,7 +317,7 @@ export const Template = () => {
                   fontSize: "58px",
                 }}
               >
-                10,60 EUR <span style={{ fontSize: "12px" }}>+IVA</span>
+                10,60 EUR
               </p>
             </div>
           }
