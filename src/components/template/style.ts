@@ -29,7 +29,7 @@ export const Underline = styled.span`
   text-decoration: underline;
 `;
 export const ImageContainerHeader = styled.div<{
-  isMobile?: boolean | number;
+  isMobile: boolean | number | undefined;
 }>`
   position: relative;
   padding: 0;
